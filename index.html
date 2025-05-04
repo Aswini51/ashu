@@ -3,131 +3,114 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Simple Weather App</title>
+  <title>Weather Forecast Card</title>
   <style>
     body {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to bottom, #87cefa, #ffffff);
-      color: #333;
-      padding: 20px;
+      font-family: 'Courier New', monospace;
+      background: #e2e8f0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
     }
 
-    .container {
-      max-width: 720px;
-      margin: auto;
-      background: #ffffffd9;
+    .weather-card {
+      background: #e6b3ff;
       border-radius: 12px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-      padding: 25px;
+      padding: 30px;
+      width: 320px;
+      text-align: center;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .weather-icon {
+      font-size: 45px;
+      margin-bottom: 10px;
     }
 
     h1 {
-      text-align: center;
+      font-size: 24px;
+      margin: 0;
+    }
+
+    .temp {
+      font-size: 48px;
+      color: ##660099;
+      margin: 10px 0;
+    }
+
+    .condition {
+      font-size: 16px;
+      color: #555;
       margin-bottom: 20px;
-      color: #1a3e72;
     }
 
     input[type="text"] {
       width: 100%;
-      padding: 12px;
-      font-size: 1rem;
-      margin-bottom: 25px;
+      padding: 10px;
       border: 1px solid #ccc;
-      border-radius: 8px;
-      box-sizing: border-box;
-    }
-
-    .current-weather {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: #dbeeff;
-      padding: 20px;
-      border-radius: 10px;
-      margin-bottom: 25px;
-    }
-
-    .current-weather h2 {
-      margin: 0;
-      color: #1a3e72;
-    }
-
-    .current-weather p {
-      margin: 6px 0;
-      font-size: 1.1rem;
-    }
-
-    .weather-icon {
-      font-size: 55px;
+      border-radius: 6px;
+      margin-bottom: 20px;
+      font-family: inherit;
     }
 
     .forecast {
       display: flex;
       justify-content: space-between;
-      gap: 12px;
+      gap: 10px;
+      margin-top: 10px;
     }
 
     .day {
+      background: #f1f5f9;
+      border-radius: 8px;
+      padding: 10px;
       flex: 1;
-      background: #f4f8fb;
-      padding: 12px;
-      border-radius: 10px;
-      text-align: center;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      font-size: 14px;
     }
 
     .day .icon {
-      font-size: 32px;
-      margin: 10px 0;
+      font-size: 24px;
+      margin: 5px 0;
     }
 
-    .day strong {
-      display: block;
-      margin-bottom: 4px;
-      color: #333;
-    }
-
-    @media (max-width: 600px) {
-      .forecast {
-        flex-direction: column;
-      }
+    .footer {
+      font-size: 11px;
+      color: #aaa;
+      margin-top: 20px;
     }
   </style>
 </head>
 <body>
 
-<div class="container">
-  <h1>Weather App</h1>
-  <input type="text" placeholder="Enter city name..." />
+  <div class="weather-card">
+    <div class="weather-icon">🌤️</div>
+    <h1>New York</h1>
+    <div class="temp">22°C</div>
+    <div class="condition">Partly Cloudy</div>
+    <input type="text" placeholder="Search city..." />
 
-  <div class="current-weather">
-    <div>
-      <h2>New York</h2>
-      <p style="font-size: 2em;">72°F</p>
-      <p>Sunny</p>
+    <div class="forecast">
+      <div class="day">
+        <div><strong>Mon</strong></div>
+        <div class="icon">🌦️</div>
+        <div>20°C</div>
+      </div>
+      <div class="day">
+        <div><strong>Tue</strong></div>
+        <div class="icon">☀️</div>
+        <div>25°C</div>
+      </div>
+      <div class="day">
+        <div><strong>Wed</strong></div>
+        <div class="icon">🌧️</div>
+        <div>18°C</div>
+      </div>
     </div>
-    <div class="weather-icon">☀</div>
-  </div>
 
-  <div class="forecast">
-    <div class="day">
-      <strong>Mon</strong>
-      <div class="icon">⛅</div>
-      <div>68°F</div>
-    </div>
-    <div class="day">
-      <strong>Tue</strong>
-      <div class="icon">🌧</div>
-      <div>65°F</div>
-    </div>
-    <div class="day">
-      <strong>Wed</strong>
-      <div class="icon">☀</div>
-      <div>74°F</div>
-    </div>
+    <div class="footer">Static forecast — for design demo only</div>
   </div>
-</div>
 
 </body>
 </html>
