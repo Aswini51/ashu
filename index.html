@@ -3,69 +3,131 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Weather Dashboard</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Simple Weather App</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom, #87cefa, #ffffff);
+      color: #333;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 720px;
+      margin: auto;
+      background: #ffffffd9;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      padding: 25px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #1a3e72;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 12px;
+      font-size: 1rem;
+      margin-bottom: 25px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      box-sizing: border-box;
+    }
+
+    .current-weather {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #dbeeff;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 25px;
+    }
+
+    .current-weather h2 {
+      margin: 0;
+      color: #1a3e72;
+    }
+
+    .current-weather p {
+      margin: 6px 0;
+      font-size: 1.1rem;
+    }
+
+    .weather-icon {
+      font-size: 55px;
+    }
+
+    .forecast {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .day {
+      flex: 1;
+      background: #f4f8fb;
+      padding: 12px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+
+    .day .icon {
+      font-size: 32px;
+      margin: 10px 0;
+    }
+
+    .day strong {
+      display: block;
+      margin-bottom: 4px;
+      color: #333;
+    }
+
+    @media (max-width: 600px) {
+      .forecast {
+        flex-direction: column;
+      }
+    }
+  </style>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <h1>Weather Dashboard</h1>
-      <div class="toggle-mode">
-        <label>
-          <input type="checkbox" id="modeToggle">
-          Dark Mode
-        </label>
-      </div>
-    </header>
 
-    <div class="search-bar">
-      <input type="text" placeholder="Search city..." disabled />
-    </div>
+<div class="container">
+  <h1>Weather App</h1>
+  <input type="text" placeholder="Enter city name..." />
 
-    <div class="current-weather">
-      <h2>Chennai</h2>
-      <div class="weather-details">
-        <img src="https://cdn-icons-png.flaticon.com/512/1163/1163624.png" alt="sun icon" class="weather-icon"/>
-        <div>
-          <p class="temperature">32°C</p>
-          <p class="condition">Sunny</p>
-        </div>
-      </div>
-      <p id="dateTime"></p>
+  <div class="current-weather">
+    <div>
+      <h2>New York</h2>
+      <p style="font-size: 2em;">72°F</p>
+      <p>Sunny</p>
     </div>
-
-    <div class="forecast">
-      <h3>5-Day Forecast</h3>
-      <div class="forecast-cards">
-        <div class="card">
-          <p>Mon</p>
-          <img src="https://cdn-icons-png.flaticon.com/512/1163/1163624.png" alt="sun icon" />
-          <p>34°C</p>
-        </div>
-        <div class="card">
-          <p>Tue</p>
-          <img src="https://cdn-icons-png.flaticon.com/512/1163/1163620.png" alt="cloudy icon" />
-          <p>31°C</p>
-        </div>
-        <div class="card">
-          <p>Wed</p>
-          <img src="https://cdn-icons-png.flaticon.com/512/1163/1163625.png" alt="rain icon" />
-          <p>29°C</p>
-        </div>
-        <div class="card">
-          <p>Thu</p>
-          <img src="https://cdn-icons-png.flaticon.com/512/1163/1163629.png" alt="storm icon" />
-          <p>30°C</p>
-        </div>
-        <div class="card">
-          <p>Fri</p>
-          <img src="https://cdn-icons-png.flaticon.com/512/1163/1163618.png" alt="windy icon" />
-          <p>33°C</p>
-        </div>
-      </div>
-    </div>
+    <div class="weather-icon">☀</div>
   </div>
 
-  <script src="script.js"></script>
+  <div class="forecast">
+    <div class="day">
+      <strong>Mon</strong>
+      <div class="icon">⛅</div>
+      <div>68°F</div>
+    </div>
+    <div class="day">
+      <strong>Tue</strong>
+      <div class="icon">🌧</div>
+      <div>65°F</div>
+    </div>
+    <div class="day">
+      <strong>Wed</strong>
+      <div class="icon">☀</div>
+      <div>74°F</div>
+    </div>
+  </div>
+</div>
+
 </body>
 </html>
