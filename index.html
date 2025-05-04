@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Weather Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Weather Dashboard</h1>
+      <div class="toggle-mode">
+        <label>
+          <input type="checkbox" id="modeToggle">
+          Dark Mode
+        </label>
+      </div>
+    </header>
+
+    <div class="search-bar">
+      <input type="text" placeholder="Search city..." disabled />
+    </div>
+
+    <div class="current-weather">
+      <h2>Chennai</h2>
+      <div class="weather-details">
+        <img src="https://cdn-icons-png.flaticon.com/512/1163/1163624.png" alt="sun icon" class="weather-icon"/>
+        <div>
+          <p class="temperature">32°C</p>
+          <p class="condition">Sunny</p>
+        </div>
+      </div>
+      <p id="dateTime"></p>
+    </div>
+
+    <div class="forecast">
+      <h3>5-Day Forecast</h3>
+      <div class="forecast-cards">
+        <div class="card">
+          <p>Mon</p>
+          <img src="https://cdn-icons-png.flaticon.com/512/1163/1163624.png" alt="sun icon" />
+          <p>34°C</p>
+        </div>
+        <div class="card">
+          <p>Tue</p>
+          <img src="https://cdn-icons-png.flaticon.com/512/1163/1163620.png" alt="cloudy icon" />
+          <p>31°C</p>
+        </div>
+        <div class="card">
+          <p>Wed</p>
+          <img src="https://cdn-icons-png.flaticon.com/512/1163/1163625.png" alt="rain icon" />
+          <p>29°C</p>
+        </div>
+        <div class="card">
+          <p>Thu</p>
+          <img src="https://cdn-icons-png.flaticon.com/512/1163/1163629.png" alt="storm icon" />
+          <p>30°C</p>
+        </div>
+        <div class="card">
+          <p>Fri</p>
+          <img src="https://cdn-icons-png.flaticon.com/512/1163/1163618.png" alt="windy icon" />
+          <p>33°C</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
